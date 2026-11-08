@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #07090d;
+  --color-panel: #0e1218;
+  --color-panel-2: #131923;
+  --color-line: #1e2632;
+  --color-muted: #7d8896;
+  --color-text: #e6ebf2;
+  --color-accent: #5b8cff;
+  --color-up: #1fc77e;
+  --color-down: #ff4d5e;
+  --color-warn: #f5b83d;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+body {
+  background-image: radial-gradient(1200px 600px at 10% -10%, rgba(91, 140, 255, 0.08), transparent 60%),
+    radial-gradient(900px 500px at 110% 0%, rgba(31, 199, 126, 0.05), transparent 60%);
+  background-attachment: fixed;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.card {
+  background: linear-gradient(180deg, var(--color-panel-2), var(--color-panel));
+  border: 1px solid var(--color-line);
+  border-radius: 14px;
+}
+
+.input {
+  background: var(--color-bg);
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+  outline: none;
+}
+.input:focus {
+  border-color: var(--color-accent);
+}
+
+.btn {
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid var(--color-line);
+  background: var(--color-panel-2);
+  transition: border-color 0.15s, background 0.15s;
+}
+.btn:hover {
+  border-color: var(--color-accent);
+}
+.btn-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+.btn-primary:hover {
+  filter: brightness(1.1);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+table.grid-table th {
+  font-weight: 500;
+  color: var(--color-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--color-line);
+}
+table.grid-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-line) 60%, transparent);
+  font-size: 14px;
+}
+table.grid-table tr:hover td {
+  background: rgba(255, 255, 255, 0.015);
+}
