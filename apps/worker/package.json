@@ -1,0 +1,16 @@
+{
+  "name": "@tivaro/worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning src/main.ts",
+    "demo": "node --disable-warning=ExperimentalWarning src/demo.ts"
+  },
+  "dependencies": {
+    "@tivaro/core": "workspace:*",
+    "@tivaro/db": "workspace:*",
+    "@tivaro/data": "workspace:*",
+    "@tivaro/agents": "workspace:*"
+  }
+}

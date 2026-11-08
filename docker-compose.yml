@@ -1,0 +1,21 @@
+services:
+  worker:
+    build: .
+    command: node --disable-warning=ExperimentalWarning apps/worker/src/main.ts
+    env_file: .env
+    environment:
+      TIVARO_DB: /data/tivaromarket.db
+      TIVARO_API_HOST: 0.0.0.0
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
+  web:
+    build: .
+    command: pnpm --filter @tivaro/web start
+    environment:
+      TIVARO_API_URL: http://worker:8787
+      TIVARO_API_TOKEN: ${TIVARO_API_TOKEN}
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on: [worker]
+    restart: unless-stopped

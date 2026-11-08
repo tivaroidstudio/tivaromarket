@@ -1,0 +1,8 @@
+{
+  "name": "@tivaro/mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": { "tivaromarket-mcp": "src/main.ts" },
+  "scripts": { "start": "node src/main.ts" }
+}
